@@ -1,11 +1,8 @@
-
-
-var dailyhours = ["9 AM", "10 AM", "11 AM", "12 PM", "1PM", "2 PM", "3 PM", "4 PM", "5 PM"]
+var dailyhours = ["9 AM", "10 AM", "11 AM", "12 PM", "1 PM", "2 PM", "3 PM", "4 PM", "5 PM"]
 var hourEL = document.querySelectorAll(".hour");
 var rowEl = document.querySelector(".row");
 var eventEl = document.querySelectorAll("textarea");
 var colHour = document.querySelector(".col");
-var eventEl1 = document.querySelector("textarea").value
 var dateEl = document.querySelector("#currentDay");
 var btnEL = document.querySelectorAll(".saveBtn");
 
@@ -15,10 +12,7 @@ date = moment().format('LL');
 
 //Setup time for daily event
 var currentTime = moment().format("h A")
-//console.log(currentTime)
-//console.log(moment())
-
-
+ 
 //Function to get the current date
 function getTodayDate() {
     dateEl.textContent = date;
@@ -39,87 +33,71 @@ function outputHours() {
         if (dailyhours[i]>currentTime) {
 
             eventEl[i].setAttribute("class", "future")
-            console.log(dailyhours[i])
-            //alert("Future")
-
-        } else if (dailyhours[i]===currentTime) {
+            
+        } else if (dailyhours[i] === currentTime) {
             eventEl[i].setAttribute("class", "present")
-            //alert("Current")
+             
         }
-        //renderLastItem()
+    
     }
+    
 }
 //Call outputHours function
 outputHours()
-
-
-//var eventEl = document.querySelectorAll("textarea");
-//console.log(eventVal)
-
-
+ 
 //Set some more variables to use in the SaveEvent funtions
-var e = 0;
+
 var eventVal = "";
 var eventKey="";
-
+var e = 0;
 //Function to save each even to the local storage. 
 function saveEvent() {
-    if (e < eventEl.length) {
+     
+    if (e< eventEl.length) {
         eventVal = eventEl[e].value;
         eventKey= dailyhours[e];
-        renderLastItem()
-        if (eventVal==="") {
-             return
+       
+        if (eventVal !=="") {
+            localStorage.getItem(eventVal);
+            localStorage.setItem(eventKey, eventVal);
+            e++;
 
-        }else{
-             
-             localStorage.getItem(eventVal)
-             localStorage.setItem(eventKey, eventVal)
-             //renderLastItem()
-             //console.log(eventVal)
-            }
-        //renderLastItem()
-        e++;
-        renderLastItem()
-    }
-    //renderLastItem()
+        }         
+    }  
 }
- 
 
 /**function to render the last saved entry in the local storage into the textarea */
+
 function renderLastItem() {
-    var lastEvent = localStorage.getItem(eventKey);
-    var textAreaVal= eventEl[e].value;
-    console.log(lastEvent)
-    var eventHolder =+ lastEvent;
-    if (lastEvent=== "") {
-
-        return
-
-   }else{
-         
-        textAreaVal=lastEvent;
-        //dateEl.textContent=lastEvent
-        //console.log(textAreaVal)
-    }
    
-}
+    lastEvent = localStorage.getItem("9 AM");
+    eventEl[0].value=lastEvent
+    lastEvent = localStorage.getItem("10 AM");
+    eventEl[1].value =lastEvent;
+    lastEvent = localStorage.getItem("11 AM");
+    eventEl[2].value =lastEvent;
+    lastEvent = localStorage.getItem("12 PM");
+    eventEl[3].value =lastEvent;
+    lastEvent = localStorage.getItem("1 PM");
+    eventEl[4].value =lastEvent;
+    lastEvent = localStorage.getItem("2 PM");
+    eventEl[5].value =lastEvent; 
+    lastEvent = localStorage.getItem("3 PM");
+    eventEl[6].value =lastEvent;
+    lastEvent = localStorage.getItem("4 PM");
+    eventEl[7].value =lastEvent;
+    lastEvent = localStorage.getItem("5 PM");
+    eventEl[8].value =lastEvent;
 
-renderLastItem()
-/**This function will refresh the page and  repopulate the events after refresh**/
-function init(){
-    location.reload()
-   // renderLastItem()
-
-}
-//call init function
-//init()
+    } 
+//call function to render item on the page after refresh
+renderLastItem();
 
 var btnEL = document.querySelectorAll(".saveBtn");
-//Add an EventListner to save the events into local storage on click
+// Add an EventListner to save the events into local storage on click
 btnEL.forEach(function (event) {
     event.addEventListener("click", saveEvent)
-    
+     
 });
 
 

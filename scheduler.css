@@ -47,7 +47,7 @@ body {
   .past, .col-8 {
     background-color: #d3d3d3;
     color: white;
-    padding: 20px;
+     
   }
   
   .present {
@@ -74,7 +74,7 @@ body {
     font-size: 20px;
     transition: all .3s ease-in-out;
   }
-  .leftDiv{
+  .leftDiv{ 
     padding: 0;
   
   }
