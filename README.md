@@ -35,13 +35,9 @@ Test:
 3-Verify all the pages that were supposed to display are there. 
 
 Image of the Site:
-<img scr= "">
-<img scr= "">
-<img scr= "">
-<img scr= "">
+<img scr= "LocalStorage.PNG">
+<img scr= "ColorChange.png">
  
- 
-
 License:
 MIT License
 

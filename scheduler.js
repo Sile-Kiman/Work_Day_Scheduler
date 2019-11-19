@@ -45,31 +45,45 @@ function outputHours() {
 //Call outputHours function
 outputHours()
  
-//Set some more variables to use in the SaveEvent funtions
 
-var eventVal = "";
-var eventKey="";
-var e = 0;
 //Function to save each even to the local storage. 
-function saveEvent() {
-     
-    if (e< eventEl.length) {
-        eventVal = eventEl[e].value;
-        eventKey= dailyhours[e];
-       
-        if (eventVal !=="") {
-            localStorage.getItem(eventVal);
-            localStorage.setItem(eventKey, eventVal);
-            e++;
 
-        }         
-    }  
-}
+function saveEvent() {
+   if(eventEl[0].value!=="") {
+    localStorage.setItem("9 AM", eventEl[0].value);
+   }
+   if(eventEl[1].value!=="") {
+    localStorage.setItem("10 AM", eventEl[1].value);
+   }
+   if(eventEl[2].value!=="") {   
+    localStorage.setItem("11 AM", eventEl[2].value);
+   }
+   if(eventEl[3].value!=="") {
+    localStorage.setItem("12 PM", eventEl[3].value);
+   }
+   if(eventEl[4].value!=="") {
+    localStorage.setItem("1 PM", eventEl[4].value);
+   }
+   if(eventEl[5].value!=="") {
+    localStorage.setItem("2 PM", eventEl[5].value);
+   }
+   if(eventEl[6].value!=="") {
+    localStorage.setItem("3 PM", eventEl[6].value);
+   }
+   if(eventEl[7].value!=="") {
+    localStorage.setItem("4 PM", eventEl[7].value);
+   }
+   if(eventEl[8].value!=="") {
+    localStorage.setItem("5 PM", eventEl[8].value);
+   }
+     
+} 
+ 
 
 /**function to render the last saved entry in the local storage into the textarea */
 
 function renderLastItem() {
-   
+    
     lastEvent = localStorage.getItem("9 AM");
     eventEl[0].value=lastEvent
     lastEvent = localStorage.getItem("10 AM");
@@ -90,6 +104,7 @@ function renderLastItem() {
     eventEl[8].value =lastEvent;
 
     } 
+
 //call function to render item on the page after refresh
 renderLastItem();
 
