@@ -1,4 +1,4 @@
-var dailyhours = ["9 AM", "10 AM", "11 AM", "12 PM", "1 PM", "2 PM", "3 PM", "4 PM", "5 PM"]
+var dailyhours = ["9", "10", "11", "12", "13", "14", "15", "16" ,"17"]
 var hourEL = document.querySelectorAll(".hour");
 var rowEl = document.querySelector(".row");
 var eventEl = document.querySelectorAll("textarea");
@@ -11,7 +11,9 @@ var date = new Date();
 date = moment().format('LL');
 
 //Setup time for daily event
-var currentTime = moment().format("h A")
+
+var currentTime = moment().format("H");
+console.log(currentTime)
  
 //Function to get the current date
 function getTodayDate() {
@@ -19,26 +21,36 @@ function getTodayDate() {
 }
 getTodayDate();
 
-//Set an index to loop through the hours array
-var i = 0;
-
+ 
 //Function to display the hours and set difference color attribute to the textare dynamically 
 function outputHours() {
     for (var j = 0; j< hourEL.length; j++) {
-        if (i < dailyhours.length) {
-            hourEL[j].textContent = dailyhours[i];
-          
-            i++
-        }
-        if (dailyhours[i]>currentTime) {
-
-            eventEl[i].setAttribute("class", "future")
+        if (j < dailyhours.length) {
+            var hourDisplay= parseInt(dailyhours[j]);
+            var amPM =" AM";
+            if(hourDisplay>=12){
+                if(hourDisplay>12){
+                    hourDisplay=hourDisplay-12;
+                     
+                }
+                
+                amPM=" PM";
+            }
             
-        } else if (dailyhours[i] === currentTime) {
-            eventEl[i].setAttribute("class", "present")
-             
+            hourEL[j].textContent = hourDisplay + amPM;
+            h
+            if (parseInt(dailyhours[j])>parseInt(currentTime)) {
+                console.log(parseInt(dailyhours[j]));
+                eventEl[j].setAttribute("class", "future")
+                
+            } else if (dailyhours[j] === currentTime) {
+                eventEl[j].setAttribute("class", "present")
+                 
+            }else
+                eventEl[j].setAttribute("class", "past")
+        
         }
-    
+
     }
     
 }
