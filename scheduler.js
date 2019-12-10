@@ -38,7 +38,7 @@ function outputHours() {
             }
             
             hourEL[j].textContent = hourDisplay + amPM;
-            h
+            
             if (parseInt(dailyhours[j])>parseInt(currentTime)) {
                 console.log(parseInt(dailyhours[j]));
                 eventEl[j].setAttribute("class", "future")
@@ -126,6 +126,3 @@ btnEL.forEach(function (event) {
     event.addEventListener("click", saveEvent)
      
 });
-
-
-

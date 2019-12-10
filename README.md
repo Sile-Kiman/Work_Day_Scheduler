@@ -29,14 +29,17 @@ I used the following sites for my  research  during this assignment:
 3-Classmates
 4-TA’s and the instructor 
 
+Deploy Link:
+https://sile-kiman.github.io/Work_Day_Scheduler/index.html
+
 Test:
 1 -Verify the page’s  look and feel matches the wireframe provided for this assignment- (this maybe slightly different) 
 2- Check the other spec such as when you click on each button the appropriate actions are performed. 
 3-Verify all the pages that were supposed to display are there. 
 
 Image of the Site:
-<img scr= "LocalStorage.PNG">
-<img scr= "ColorChange.png">
+<img scr="ColorChange.png">
+<img scr="LocalStorage.PNG">
  
 License:
 MIT License

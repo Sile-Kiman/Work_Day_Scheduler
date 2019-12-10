@@ -68,14 +68,17 @@ body {
     color: white;
     padding-left: 30px;
     margin-right: 0px;
+    
   }
   
   .saveBtn i:hover {
     font-size: 20px;
     transition: all .3s ease-in-out;
+    
   }
   .leftDiv{ 
     padding: 0;
+     
   
   }
 
