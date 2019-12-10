@@ -38,8 +38,8 @@ Test:
 3-Verify all the pages that were supposed to display are there. 
 
 Image of the Site:
-<img scr="ColorChange.png">
-<img scr="LocalStorage.PNG">
+<img scr="assets/images/ColorChange.png">
+<img scr="assets/images/LocalStorage.PNG">
  
 License:
 MIT License
