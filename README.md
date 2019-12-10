@@ -39,8 +39,8 @@ Test:
 
  
 Image of the Site:
-<img scr="assets/image/colorchange.PNG">
-<img scr="assets/image/localstorage.PNG">
+<img scr="assets/images/colorchange.PNG">
+<img scr="assets/images/localstorage.PNG">
  
 License:
 MIT License
