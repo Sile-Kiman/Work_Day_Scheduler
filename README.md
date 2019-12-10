@@ -37,9 +37,10 @@ Test:
 2- Check the other spec such as when you click on each button the appropriate actions are performed. 
 3-Verify all the pages that were supposed to display are there. 
 
+ 
 Image of the Site:
-<img scr="assets/image/colorchange.PNG">
-<img scr="assets/image/localstorage.PNG">
+<img scr="assets/images/colorchange.PNG">
+<img scr="assets/images/localstorage.PNG">
  
 License:
 MIT License
